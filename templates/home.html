@@ -1,0 +1,293 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/slick.css">
+	<title>Book shop</title>
+</head>
+<body>
+
+	<!-- Navigation -->
+	<nav class="site-navigation">
+		<div class="site-navigation-inner site-container" >
+			<h1 style="color: rgb(210, 141, 92); font-size: 30px;">Book shop</h1>
+			<div class="main-navigation">
+				<ul class="main-navigation__ul">
+					<li><a href="/">Homepage</a></li>
+					<li><a href="{% url 'aksiya' %}">Aksiyalar</a></li>
+					<li><a href="{% url 'news' %}">News</a></li>
+					<li><a href="{% url 'mycart' %}">View Cart</a></li>
+					
+				</ul>
+			</div>
+			<div id="myBtn" class="burger-container" onclick="myFunction(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<script>
+				function myFunction(x) {
+					x.classList.toggle("change");
+				}
+			</script>
+
+		</div>
+	</nav>
+	<!-- Navigation end -->
+
+	<!-- Top banner -->
+	<section class="fh5co-top-banner">
+		<div class="top-banner__inner site-container">
+			<div class="top-banner__image">
+				<img src="/static/images/tom-hermans-9BoqXzEeQqM-unsplash.jpg" width="70%" alt="author image">
+			</div>
+			<div class="top-banner__text">
+				<div class="top-banner__text-up">
+					<span class="brand-span">Lorem Lipsum</span>
+					<h2 class="top-banner__h2">Lorem</h2>
+				</div>
+				<div class="top-banner__text-down">
+					<h2 class="top-banner__h2">Lipsum</h2>
+					<span class="brand-span">Lorem, ipsum.</span>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, assumenda?</p>
+				
+			</div>
+		</div>
+	</section>
+	<!-- Top banner end -->
+
+	<!-- About me -->
+	<section class="fh5co-about-me">
+		<div class="about-me-inner site-container">
+			<article class="portfolio-wrapper">
+				<div class="portfolio__img">
+					<img src="/static/images/images1.jpg" class="about-me__profile" alt="about me profile picture">
+				</div>
+				<div class="portfolio__bottom">
+					<div class="portfolio__name">
+						<span>J</span>
+						<h2 class="universal-h2">Lorem Lipsum</h2>
+					</div>
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio nulla accusantium voluptatum, soluta, ullam ipsam sapiente asperiores amet nesciunt beatae reprehenderit debitis fuga ut, dolorem dolorum .</p>
+				</div>
+			</article>
+			<div class="about-me__text">
+				<div class="about-me-slider">
+					<div class="about-me-single-slide">
+						<h2 class="universal-h2 universal-h2-bckg">Lorem Lipsum</h2>
+						<p><span>H</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deserunt minus, illo a deleniti minima quae odio eligendi similique omnis nemo tempore labore, quo, id amet nobis aspernatur nulla quis adipisci repudiandae! Nihil dolore est porro quam minus amet nostrum.</p>
+						<h4>    </h4>
+						<p class="p-white"></p>
+					</div>
+					<div class="about-me-single-slide">
+						<h2 class="universal-h2 universal-h2-bckg">Lorem Lipsum</h2>
+						<p><span>H</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, doloribus tempore rerum deleniti vero facilis quo nisi corporis eius hic aspernatur assumenda sint voluptatem veniam beatae itaque ullam recusandae adipisci quidem! Ut culpa nostrum consequuntur accusamus nobis. Praesentium repudiandae, natus consectetur veniam nihil officia, aliquid sint fuga, numquam illo laboriosam.</p>
+						<h4></h4>
+						<p class="p-white"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about-me-bckg"></div>
+	</section>
+	<!-- About me end -->
+
+	<!-- Books and CD -->
+	<section class="fh5co-books">
+        <div class="site-container">
+            <h2 class="universal-h2 universal-h2-bckg"> Books</h2>
+			<div class="books">
+                {% for a in object_list %}
+                <div class="single-book">
+                    <a href="{% url 'addproduct' a.pk %}" class="single-book__img">
+						<img src="{{a.image.url}}" alt="single book and cd">
+						<div class="single-book_download">
+							<img src="/static/images/download.svg" alt="book image">
+						</div>
+					</a>
+					<h4 class="single-book__title">{{a.book_name}}</h4>
+                    <h5 class="single-book__title">muallif:{{a.muallif}}</h5>
+					<span class="single-book__price">${{a.price}}</span>
+				</div>
+                {% endfor %}
+            </div>
+        </div>
+			
+	<!-- Books and CD end -->
+
+	<!-- Counter -->
+	<div class="fh5co-counter counters">
+		<div class="counter-inner site-container">
+			<div class="single-count">
+				<span class="count" data-count="50">0</span>
+				<div class="single-count__text">
+					<img src="/static/images/counter-1.png" alt="counter icon">
+					<p>Books</p>
+				</div>
+			</div>
+			<div class="single-count">
+				<span class="count" data-count="600">0</span>
+				<div class="single-count__text">
+					<img src="/static/images/counter-2.png" alt="counter icon">
+					<p>Pages</p>
+				</div>
+			</div>
+			<div class="single-count">
+				<span class="count" data-count="2000">0</span>
+				<div class="single-count__text">
+					<img src="/static/images/counter-3.png" alt="counter icon">
+					<p>Sales</p>
+				</div>
+			</div>
+			<div class="single-count">
+				<span class="count" data-count="125">0</span>
+				<div class="single-count__text">
+					<img src="/static/images/counter-4.png" alt="counter icon">
+					<p>Awards</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Counter -->
+
+	<!-- Blog -->
+	<section class="fh5co-blog">
+		<div class="site-container">
+			<h2 class="universal-h2 universal-h2-bckg">My Blog</h2>
+			<div class="blog-slider blog-inner">
+				<div class="single-blog">
+					<div class="single-blog__img">
+						<img src="/static/images/blog1.jpg" alt="blog image">
+					</div>
+					<div class="single-blog__text">
+						<h4>Lorem ipsum dolor sit amet consectetur </h4>
+						<span>lorem lipsum</span>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure facere optio error perspiciatis ipsum quos eligendi quasi adipisci molestiae accusamus?.</p>
+					</div>
+				</div>
+				<div class="single-blog">
+					<div class="single-blog__img">
+						<img src="/static/images/blog2.jpg" alt="blog image">
+					</div>
+					<div class="single-blog__text">
+						<h4>Lorem, ipsum dolor.</h4>
+						<span>lorem lipsum</span>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic alias doloremque labore? Minima dolorem sapiente maxime qui reprehenderit. Consequuntur, deserunt..</p>
+					</div>
+				</div>
+				<div class="single-blog">
+					<div class="single-blog__img">
+						<img src="/static/images/blog2.jpg" alt="blog image">
+					</div>
+					<div class="single-blog__text">
+						<h4>Lorem, ipsum dolor.</h4>
+						<span>Lorem, ipsum dolor.</span>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus voluptatum, recusandae corporis odit amet praesentium, quas voluptates hic a dignissimos fugiat aliquid, molestiae porro incidunt possimus sapiente illum natus? Molestiae?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog end -->
+
+	<!-- Quotes -->
+	<section class="fh5co-quotes">
+		<div class="site-container">
+			<div class="about-me-slider">
+				<div>
+					<h2 class="universal-h2 universal-h2-bckg">Lorem ipsum dolor sit amet.</h2>
+					<p>“Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit tenetur perferendis aliquam at ex ad quod dolores tempore hic pariatur consequuntur adipisci officia earum veniam rerum atque laborum, unde necessitatibus. Impedit enim facere ipsa ratione?”</p>
+					<img src="/static/images/quotes.svg" alt="quotes svg">
+					<h4>David Dixon</h4>
+					<p>Reader</p>
+				</div>
+				<div>
+					<h2 class="universal-h2 universal-h2-bckg">What People Are Saying 2</h2>
+					<p>“Pudding croissant cake candy canes fruitcake sweet roll pastry gummies sugar plum. Tart pastry danish soufflé donut bear claw chocolate cake marshmallow chupa chups. Jelly danish gummi bears cake donut powder chocolate cake. Bonbon soufflé lollipop biscuit dragée jelly-o. Wafer pastry pudding tiramisu chocolate bar croissant cake. Pie caramels gummies danish.”</p>
+					<img src="/static/images/quotes.svg" alt="quotes svg">
+					<h4>David Dixon</h4>
+					<p>Reader</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Quotes end -->
+
+	<!-- Social -->
+	<section class="fh5co-social">
+		<div class="site-container">
+			<div class="social">
+				<h5>Follow me!!</h5>
+				<div class="social-icons">
+					<a href="/" ><img src="/static/images/social-twitter.png" alt="social icon"></a>
+					<a href="/" ><img src="/static/images/social-pinterest.png" alt="social icon"></a>  
+					<a href="/" ><img src="/static/images/social-youtube.png" alt="social icon"></a>
+					<a href="/" ><img src="/static/images/social-twitter.png" alt="social icon"></a>
+				</div>
+				<h5>Share it!</h5>
+			</div>
+		</div>
+	</section>
+	<!-- Social -->
+
+	<!-- Footer -->
+	<footer class="site-footer">
+		<div class="site-container">
+			<div class="footer-inner">
+				<div class="footer-info">
+					<div class="footer-info__left">
+						<img src="/static/images/footer-img.jpg" alt="about me image">
+						<p>Read more about me</p>
+					</div>
+					<div class="footer-info__right">
+						<h5>Get In Touch</h5>
+						<p class="footer-phone">Phone: +958734902847</p>
+						<p>Email : Jhone@Example.com</p>
+						<div class="social-icons">
+							<a href="#" target="_blank"><img src="/static/images/social-twitter.png" alt="social icon"></a>
+							<a href="#" target="_blank"><img src="/static/images/social-pinterest.png" alt="social icon"></a>
+							<a href="#" target="_blank"><img src="/static/images/social-youtube.png" alt="social icon"></a>
+							<a href="#" target="_blank"><img src="/static/images/social-twitter.png" alt="social icon"></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-contact-form">
+					<h5>Contact Form</h5>
+					<form class="contact-form">
+						<div class="contact-form__input">
+							<input type="text" name="name" placeholder="Name">
+							<input type="email" name="email" placeholder="Email">
+						</div>
+						<textarea></textarea>
+						<input type="submit" name="submit" value="Submit" class="submit-button">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="site-container footer-bottom-inner">
+				
+				<div class="footer-bottom__img">
+					<img src="/static/images/footer-mastercard.png" alt="footer image">
+					<img src="/static/images/footer-paypal.png" alt="footer image">
+					<img src="/static/images/footer-visa.png" alt="footer image">
+					<img src="/static/images/footer-fedex.png" alt="footer image">
+					<img src="/static/images/footer-dhl.png" alt="footer image">
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer end -->
+
+	<!-- Scripts -->
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/slick.min.js"></script>
+	<script src="/static/js/main.js"></script>
+
+</body>
+</html>

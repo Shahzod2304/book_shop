@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<a href="{% url 'home' %}"><img class="back" src="/static/images/left-arrow.png"></a>
+<head>
+    {% for news in object_list %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/slick.css">
+    <title>Book shop</title>
+    <style>
+        body{
+            background-image: url('/static/images/background_image.png');
+            background-size: cover;
+            background-position: fixed;
+        }
+        .news_card{
+            width: 30%;
+            box-shadow: 0px 5px 20px 10px;
+            background-color: orange;
+            border-radius: 20px 20px 20px 0px;
+            opacity: 85%;
+        }
+        .body, .title, .date{
+            color: black;
+            padding: 0px 10px;
+        }
+        .title{
+            background-color: black;
+            color: white;
+            padding: 7px 0px;
+            opacity: 80%;
+            border-radius: 19px 19px 0 0;
+        }
+        .card{
+            opacity: 0%;
+            transition: 0.4s ease-in-out;
+            text-decoration: none;
+            color: white;
+        }
+        .inner{
+            background-color: black;
+            width: 40%;
+            padding: 10px 0px;
+            border-radius: 5px;
+        }
+        .news_card:hover .card{
+            opacity: 70%;
+        }
+        .back{
+            background-color: white;
+            width: 3%;
+            position: fixed;
+            border-radius: 50%;
+            padding: 5px;
+            transition: 0.3s ease-in-out;
+        }
+        .back:hover{
+            width: 3.7%;
+        }
+    </style>
+</head>
+<body>
+    	<!-- Navigation -->
+	<nav class="site-navigation">
+		<div class="site-navigation-inner site-container" >
+			<h1 style="color: rgb(210, 141, 92); font-size: 30px;">Book shop</h1>
+			<div class="main-navigation">
+				<ul class="main-navigation__ul">
+					<li><a href="/">Homepage</a></li>
+					<li><a href="#">Aksiyalar</a></li>
+					<li><a href="{% url 'news' %}">News</a></li>
+					<li><a href="{% url 'mycart' %}">View Cart</a></li>
+					
+				</ul>
+			</div>
+			<div id="myBtn" class="burger-container" onclick="myFunction(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<script>
+				function myFunction(x) {
+					x.classList.toggle("change");
+				}
+			</script>
+
+		</div>
+	</nav>
+	<!-- Navigation end -->
+    <br><br><br><br><br><br><br>
+<center>
+    <div class="news_card">
+        <h1 class="title">{{ news.n_title}}</h1><br>
+        <h3 class="body">{{ news.n_body|slice:200 }}.....</h3>
+        <a class="card" href="{% url 'news_detail' news.pk %}"><h3 class="inner">Read more about</h3></a>
+        <p class="date">{{ news.n_date }}</p>
+    </div>
+    <br>
+</center>
+{% endfor %}
+<br><br>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="site-container">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <div class="footer-info__left">
+                    <img src="/static/images/footer-img.jpg" alt="about me image">
+                    <p>Read more about me</p>
+                </div>
+                <div class="footer-info__right">
+                    <h5>Get In Touch</h5>
+                    <p class="footer-phone">Phone: +958734902847</p>
+                    <p>Email : Jhone@Example.com</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><img src="/static/images/social-twitter.png" alt="social icon"></a>
+                        <a href="#" target="_blank"><img src="/static/images/social-pinterest.png" alt="social icon"></a>
+                        <a href="#" target="_blank"><img src="/static/images/social-youtube.png" alt="social icon"></a>
+                        <a href="#" target="_blank"><img src="/static/images/social-twitter.png" alt="social icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact-form">
+                <h5>Contact Form</h5>
+                <form class="contact-form">
+                    <div class="contact-form__input">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <textarea></textarea>
+                    <input type="submit" name="submit" value="Submit" class="submit-button">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="site-container footer-bottom-inner">
+            
+            <div class="footer-bottom__img">
+                <img src="/static/images/footer-mastercard.png" alt="footer image">
+                <img src="/static/images/footer-paypal.png" alt="footer image">
+                <img src="/static/images/footer-visa.png" alt="footer image">
+                <img src="/static/images/footer-fedex.png" alt="footer image">
+                <img src="/static/images/footer-dhl.png" alt="footer image">
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<!-- Scripts -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/slick.min.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>

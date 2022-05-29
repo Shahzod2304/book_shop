@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/slick.css">
+	<title>Aksiyalar</title>
+      
+</head>
+<body>
+
+	<!-- Navigation -->
+	<nav class="site-navigation">
+		<div class="site-navigation-inner site-container" >
+			<h1 style="color: rgb(210, 141, 92); font-size: 30px;">Book shop</h1>
+			<div class="main-navigation">
+				<ul class="main-navigation__ul">
+					<li><a href="/">Homepage</a></li>
+					<li><a href="#">Aksiyalar</a></li>
+					<li><a href="{% url 'news' %}">News</a></li>
+					<li><a href="{% url 'mycart' %}">View Cart</a></li>
+					
+				</ul>
+			</div>
+			<div id="myBtn" class="burger-container" onclick="myFunction(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<script>
+				function myFunction(x) {
+					x.classList.toggle("change");
+				}
+			</script>
+
+		</div>
+	</nav>
+	<!-- Navigation end -->
+    
+
+
+
+
+
+
+  
+    
+</body>
+</html>
