@@ -49,3 +49,9 @@ class CartProduct(models.Model):
 
     def __str__(self):
         return "Cart " + str(self.cart.id) + " CartProduct: " + str(self.id)
+
+
+class Aksiya(models.Model):
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    photo = models.ImageField(upload_to='images/')

@@ -10,6 +10,7 @@ urlpatterns = [
     path("my-cart/", MyCartView.as_view(),name="mycart"),
     path('manage-cart/<int:cp_id>/',ManageCartView.as_view(),name='managecart'),
     path("empty-cart/",EmptyCartView.as_view(),name='emptycart'),
-    path('aksiya/',AksiyaView.as_view(),name='aksiya')
+    path('aksiya/',AksiyaPage.as_view(),name='aksiya'),
+    path('aksiya/<int:pk>/', AksiyaPageDetail.as_view(), name='aksiya_detail'),
     
 ]

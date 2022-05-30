@@ -103,5 +103,11 @@ class EmptyCartView(View):
             cart.save()
         return redirect("mycart")
 
-class AksiyaView(TemplateView):
+class AksiyaPage(ListView):
+    model = Aksiya
     template_name = 'aksiyapage.html'
+
+
+class AksiyaPageDetail(DetailView):
+    model = Aksiya
+    template_name = 'news_page_detail.html'

@@ -16,7 +16,7 @@
 <body>
     <nav class="site-navigation">
 		<div class="site-navigation-inner site-container" >
-			<h1 style="color: rgb(210, 141, 92); font-size: 30px;">Book shop</h1>
+			<a href="/"><h1 style="color: rgb(210, 141, 92); font-size: 30px;">Book shop</h1></a>
 			<div class="main-navigation">
 				<ul class="main-navigation__ul">
 					<li><a href="/">Homepage</a></li>
@@ -77,7 +77,7 @@
                         </tr>
                         {% if cart.cartproduct_set.all %}
                         <tr>
-                            <th><a class="btn btn-info" href="#"> Checkout </a></th>
+                            <th><a class="btn btn-info" target="_blank" href="https://payme.uz/home/payment">To'lash</a></th>
                         </tr>
                         {% endif %}
 

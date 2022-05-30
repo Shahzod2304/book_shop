@@ -7,6 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="/static/css/style.css">
 	<link rel="stylesheet" href="/static/css/slick.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<title>Aksiyalar</title>
       
 </head>
@@ -15,7 +19,7 @@
 	<!-- Navigation -->
 	<nav class="site-navigation">
 		<div class="site-navigation-inner site-container" >
-			<h1 style="color: rgb(210, 141, 92); font-size: 30px;">Book shop</h1>
+			<a href="/"><h1 style="color: rgb(210, 141, 92); font-size: 30px;">Book shop</h1></a>
 			<div class="main-navigation">
 				<ul class="main-navigation__ul">
 					<li><a href="/">Homepage</a></li>
@@ -39,9 +43,82 @@
 		</div>
 	</nav>
 	<!-- Navigation end -->
-    
+<br><br><br><br><br>
+<center><h1>Aksiyalar</h1></center>
+<br><br>
+    {% for d in object_list %}
+    <div  class="container align-items-center">
 
+        <div class="card mb-3" style="max-width: 740px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1608099269227-82de5da1e4a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGJvb2tzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" width="90%" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{d.title}}</h5>
+                        <p class="card-text">{{d.body}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+<br><br><br>
 
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="site-container">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <div class="footer-info__left">
+                    <img src="/static/images/footer-img.jpg" alt="about me image">
+                    <p>Read more about me</p>
+                </div>
+                <div class="footer-info__right">
+                    <h5>Get In Touch</h5>
+                    <p class="footer-phone">Phone: +958734902847</p>
+                    <p>Email : Jhone@Example.com</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><img src="/static/images/social-twitter.png" alt="social icon"></a>
+                        <a href="#" target="_blank"><img src="/static/images/social-pinterest.png" alt="social icon"></a>
+                        <a href="#" target="_blank"><img src="/static/images/social-youtube.png" alt="social icon"></a>
+                        <a href="#" target="_blank"><img src="/static/images/social-twitter.png" alt="social icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact-form">
+                <h5>Contact Form</h5>
+                <form class="contact-form">
+                    <div class="contact-form__input">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <textarea></textarea>
+                    <input type="submit" name="submit" value="Submit" class="submit-button">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="site-container footer-bottom-inner">
+            
+            <div class="footer-bottom__img">
+                <img src="/static/images/footer-mastercard.png" alt="footer image">
+                <img src="/static/images/footer-paypal.png" alt="footer image">
+                <img src="/static/images/footer-visa.png" alt="footer image">
+                <img src="/static/images/footer-fedex.png" alt="footer image">
+                <img src="/static/images/footer-dhl.png" alt="footer image">
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<!-- Scripts -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/slick.min.js"></script>
+<script src="/static/js/main.js"></script>
 
 
 
