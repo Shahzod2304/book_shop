@@ -1,4 +1,4 @@
 # book_shop
-book shop project 
+book shop django  project 
 
 link: https://boookkshoop23.herokuapp.com/
