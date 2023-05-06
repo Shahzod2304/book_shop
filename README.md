@@ -1,4 +1,4 @@
 # book_shop
 book shop django  project 
 
-link: https://boookkshoop23.herokuapp.com/
+link: https://web-production-d432.up.railway.app
